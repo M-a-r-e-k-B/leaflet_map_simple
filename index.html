@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>leaflet-map-simple</title>
+  <title>Prostě mapa</title>
+	<link rel="icon" type="image/x-icon" href="images.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -30,13 +31,13 @@
     center: [49.593729394941235, 17.265311601057046], // EDIT coordinates to re-center map
     zoom: 11,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
     scrollWheelZoom: true
-  }).affTo(map);
+  });
 
   var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
     center: [49.593729394941235, 17.265311601057046],
     zoom: 11,
-  });
+  }).addTo(map);
 
     
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
