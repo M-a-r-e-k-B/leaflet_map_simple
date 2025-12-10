@@ -26,23 +26,21 @@
   <!-- Create the interactive map content with JavaScript (.js) -->
   <script>
 
-  /* Set up the initial map center and zoom level */
+    /* Set up the initial map center and zoom level */
+  var map = L.map('map', {
+    center: [49.593729394941235, 17.265311601057046], // EDIT coordinates to re-center map
+    zoom: 11,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
+    scrollWheelZoom: false
+  });
 
 
-  var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community',
-    center: [49.593729394941235, 17.265311601057046],
-    zoom: 11,
-  }).addTo(map);
+	var Esri_WorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+		attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+	}).addTo(map);
 
     
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
-  L.tileLayer(
-    'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://osm.org/copyright">\
-        OpenStreetMap</a> contributors, &copy;\
-        <a href="https://carto.com/attribution">CARTO</a>'
-  }).addTo(map);
+
 
   /* Display a point marker with pop-up text */
   L.marker([49.593729394941235, 17.265311601057046]).addTo(map) // EDIT marker coordinates
